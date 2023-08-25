@@ -129,7 +129,7 @@ const transientProps: Partial<Record<keyof BoxProps, boolean>> = {
   width: true,
 };
 
-export const Box = styled.div.withConfig<BoxProps>({
+export const Box = styled('div').withConfig<BoxProps>({
   shouldForwardProp: (prop, defPropValFN) => !transientProps[prop as keyof BoxProps] && defPropValFN(prop),
 })`
   // Font
